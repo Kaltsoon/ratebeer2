@@ -1,12 +1,6 @@
-<div id="<%= dom_id brewery %>">
-  <p>
-    <strong>Name:</strong>
-    <%= link_to brewery.name, brewery %>
-  </p>
-
-  <p>
-    <strong>Year:</strong>
-    <%= brewery.year %>
-  </p>
-
-</div>
+<dl id="<%= dom_id brewery %>">
+  <dt>Name:</dt>
+  <dd><%= link_to brewery.name, brewery %></dd>
+  <dt>Year:</dt>
+  <dd><%= brewery.year %></dd>
+</dl>

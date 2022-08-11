@@ -1,6 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @beer %>
+<h1><%= @beer.name %></h1>
+
+<dl>
+    <dt>Style:</dt>
+    <dd><%= @beer.style %></dd>
+    <dt>Number of ratings:</dt>
+    <dd>Beer has <%= pluralize(@beer.ratings.count, "rating") %></dd>
+    <dt>Average rating:</dt>
+    <dd>
+      <% if @beer.ratings.empty? %>
+        Beer has not yet been rated!
+      <% else %>
+        Beer's average rating is <%= @beer.average_rating %>
+      <% end %>
+    </dd>
+    <dt>Brewery:</dt>
+    <dd><%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %></dd>
+</dl>
 
 <div>
   <%= link_to "Edit this beer", edit_beer_path(@beer) %> |

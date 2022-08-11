@@ -1,0 +1,15 @@
+<h1>Ratings</h1>
+
+<p>
+  <%= link_to "New rating", new_rating_path %>
+</p>
+
+<p>
+  Total of <%= @ratings.count %> ratings:
+</p>
+
+<ul>
+ <% @ratings.each do |rating| %>
+   <li><%= render rating %></li>
+ <% end %>
+</ul>

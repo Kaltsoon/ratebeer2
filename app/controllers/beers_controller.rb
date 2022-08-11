@@ -13,10 +13,15 @@ class BeersController < ApplicationController
   # GET /beers/new
   def new
     @beer = Beer.new
+
+    set_form_data
   end
 
   # GET /beers/1/edit
   def edit
+    @breweries = Brewery.all
+    
+    set_form_data
   end
 
   # POST /beers or /beers.json
@@ -66,5 +71,14 @@ class BeersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def beer_params
       params.require(:beer).permit(:name, :style, :brewery_id)
+    end
+
+    def available_styles
+      return ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+    end
+
+    def set_form_data
+      @breweries = Brewery.all
+      @styles = available_styles
     end
 end

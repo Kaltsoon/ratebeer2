@@ -1,8 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<h2><%= @brewery.name %> <i>Established in <%= @brewery.year %></i></h2>
+<h1><%= @brewery.name %>, <i>established in <%= @brewery.year %></i></h1>
 
-Brewery has <%= @brewery.beers.count %> beers:
+<dl>
+  <dt>Number of ratings:</dt>
+    <dd>Brewery has <%= pluralize(@brewery.ratings.count, "rating") %></dd>
+  <dt>
+    Average rating:
+  </dt>
+  <dd>
+    <% if @brewery.ratings.empty? %>
+      Brewery has not yet been rated!
+    <% else %>
+      Brewery's average rating is <%= @brewery.average_rating %>
+    <% end %>
+  </dd>
+</dl>
+
+Brewery has total of <%= pluralize(@brewery.beers.count, "beers") %>:
 
 <ul>
 <% @brewery.beers.each do |beer| %>

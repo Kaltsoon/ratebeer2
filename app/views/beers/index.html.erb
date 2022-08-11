@@ -1,13 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<p><%= link_to "List of breweries", breweries_path =%></p>
-
 <h1>Beers</h1>
+
+<%= link_to "New beer", new_beer_path %>
 
 <div id="beers">
   <% @beers.each do |beer| %>
     <%= render beer %>
   <% end %>
 </div>
-
-<%= link_to "New beer", new_beer_path %>

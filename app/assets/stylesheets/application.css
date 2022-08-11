@@ -13,3 +13,128 @@
  *= require_tree .
  *= require_self
  */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--color-text-heading);
+  font-family: var(--font-family-heading);
+  line-height: var(--line-height-heading);
+  margin-bottom: 16px;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-size: var(--font-size-body);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+}
+
+.navbar {
+  padding: 16px 0px;
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo {
+  flex-grow: 0;
+  margin-right: 16px;
+  font-size: 1.3rem;
+  font-family: var(--font-family-heading);
+  color: var(--color-text-heading);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
+.navbar__links {
+  flex-grow: 1;
+}
+
+.navbar__links a {
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-heading);
+  border-radius: 3px;
+  transition: background-color 0.25s;
+}
+
+.navbar__links a:hover {
+  background-color: #ffe9d6;
+}
+
+.container {
+  margin: 0px auto;
+  max-width: 1200px;
+  padding: 0px 32px;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-row-gap: 8px;
+}
+
+dl dt {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
+}
+
+dl dd {
+  margin: 0px;
+  padding: 0px;
+  margin-left: 16px;
+}
+
+label {
+  display: block;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-heading);
+  margin-bottom: 4px;
+}
+
+input[type='text'],
+input[type='number'],
+select {
+  border: 1px solid rgb(150, 150, 150);
+  border-radius: 3px;
+  padding: 8px 12px;
+  line-height: var(--line-height-body);
+}
+
+.mb-2 {
+  margin-bottom: 16px;
+}
+
+.btn {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 0px none;
+  border-radius: 3px;
+  background-color: var(--color-primary);
+  color: white;
+  line-height: var(--line-height-body);
+}
+
+.btn--sm {
+  padding: 4px 12px;
+  font-size: 0.9rem;
+}
